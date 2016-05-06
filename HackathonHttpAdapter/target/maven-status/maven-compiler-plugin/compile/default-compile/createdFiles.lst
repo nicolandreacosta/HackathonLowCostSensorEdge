@@ -1,0 +1,7 @@
+com/ge/predix/hackathon/httpAdapter/SensorData.class
+com/ge/predix/hackathon/httpAdapter/Sample.class
+com/ge/predix/hackathon/httpAdapter/SensorDataDao.class
+com/ge/predix/hackathon/httpAdapter/SampleSubscriptionListener.class
+com/ge/predix/hackathon/httpAdapter/SampleDataNode.class
+com/ge/predix/hackathon/httpAdapter/SampleDataSubscription.class
+com/ge/predix/hackathon/httpAdapter/HackathonHttpAdapter.class

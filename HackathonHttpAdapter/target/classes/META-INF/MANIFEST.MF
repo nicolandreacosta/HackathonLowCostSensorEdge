@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1462546915365
+Build-Jdk: 1.8.0_71
+Built-By: predix
+Bundle-Classpath: .
+Bundle-ManifestVersion: 2
+Bundle-Name: HackathonHttpAdapter built from arch-basic-dspmicro-module
+Bundle-SymbolicName: HackathonHttpAdapter
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.ge.predix.hackathon.httpAdapter;version="1.0";uses:=
+ "com.ge.dspmicro.httpclient.api,com.ge.dspmicro.machinegateway.api,com.
+ ge.dspmicro.machinegateway.api.adapter,com.ge.dspmicro.machinegateway.t
+ ypes,org.osgi.service.component"
+Import-Package: org.slf4j;version="[1.7,2)";provider=paxlogging,org.osgi
+ .service.component;version="[1.1,2)",org.osgi.framework;version="[1.5,2
+ )",com.ge.dspmicro.machinegateway.api;version="[1.1,2.0)",com.ge.dspmic
+ ro.machinegateway.api.adapter;version="[1.1,2.0)",com.ge.dspmicro.machi
+ negateway.types;version="[1.1,2.0)",com.ge.dspmicro.httpclient.api;vers
+ ion="[1.0,2.0)",org.apache.http.conn.ssl;version="[4.4,4.5)",org.json;v
+ ersion="[1.0.0,2)",aQute.bnd.annotation.metatype;version="[1.45,2)",org
+ .osgi.service.cm;version="[1.3,2)",org.apache.http;version="[4.4,4.5)",
+ org.apache.http.client;version="[4.4,4.5)",org.apache.http.client.metho
+ ds;version="[4.4,4.5)",org.apache.http.client.utils;version="[4.4,4.5)"
+ ,org.apache.http.entity;version="[4.4,4.5)",org.apache.http.entity.mime
+ .content;version="[4.4,4.5)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Service-Component: OSGI-INF/com.ge.predix.solsvc.MachineTraining2.random
+ adapter.xml
+Tool: Bnd-3.0.0.201509101326

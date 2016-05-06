@@ -1,0 +1,6 @@
+com/ge/predix/hackathon/webservice/Sample.class
+com/ge/predix/hackathon/webservice/SensorData.class
+com/ge/predix/hackathon/webservice/Messages.class
+com/ge/predix/hackathon/webservice/IHttpsServer.class
+com/ge/predix/hackathon/webservice/SensorDataDao.class
+com/ge/predix/hackathon/webservice/HttpServer.class
