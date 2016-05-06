@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/date.js"></script>
+    <style type="text/css">
+        
+    </style>
+    <title></title>
+    <script type='text/javascript'>
+        //<![CDATA[
+        var clientId = "GBHackatonClientID";
+        var clientSecret = "GBHackatonClientID";
+        var authorizationBasic = 'Basic ' + btoa(clientId + ':' + clientSecret);
+        var tokenUrl = "https://66063719-7938-4103-9bb7-3f0f3ea58196.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token";
+        var retrievedToken = "eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiIzNTkzOWFmMC0yNzRlLTRjM2EtYjE4ZS1jNmMwMjE4Y2M0YzEiLCJzdWIiOiJHQkhhY2thdG9uQ2xpZW50SUQiLCJzY29wZSI6WyJ0aW1lc2VyaWVzLnpvbmVzLjY2MDYzNzE5LTc5MzgtNDEwMy05YmI3LTNmMGYzZWE1ODE5Ni51c2VyIiwidGltZXNlcmllcy56b25lcy4yY2ZlZDVjYS00NWZkLTQ0M2UtYmFiZC03OGMxZDMxYTkxZDUucXVlcnkiLCJ0aW1lc2VyaWVzLnpvbmVzLjY2MDYzNzE5LTc5MzgtNDEwMy05YmI3LTNmMGYzZWE1ODE5Ni5pbmdlc3QiLCJ1YWEucmVzb3VyY2UiLCJvcGVuaWQiLCJ1YWEubm9uZSIsInRpbWVzZXJpZXMuem9uZXMuMmNmZWQ1Y2EtNDVmZC00NDNlLWJhYmQtNzhjMWQzMWE5MWQ1LnVzZXIiLCJ0aW1lc2VyaWVzLnpvbmVzLjY2MDYzNzE5LTc5MzgtNDEwMy05YmI3LTNmMGYzZWE1ODE5Ni5xdWVyeSIsInRpbWVzZXJpZXMuem9uZXMuMmNmZWQ1Y2EtNDVmZC00NDNlLWJhYmQtNzhjMWQzMWE5MWQ1LmluZ2VzdCJdLCJjbGllbnRfaWQiOiJHQkhhY2thdG9uQ2xpZW50SUQiLCJjaWQiOiJHQkhhY2thdG9uQ2xpZW50SUQiLCJhenAiOiJHQkhhY2thdG9uQ2xpZW50SUQiLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwicmV2X3NpZyI6ImY0YTkxYjM1IiwiaWF0IjoxNDYyNTIzNDU4LCJleHAiOjE0NjI1NjY2NTgsImlzcyI6Imh0dHBzOi8vNjYwNjM3MTktNzkzOC00MTAzLTliYjctM2YwZjNlYTU4MTk2LnByZWRpeC11YWEucnVuLmF3cy11c3cwMi1wci5pY2UucHJlZGl4LmlvL29hdXRoL3Rva2VuIiwiemlkIjoiNjYwNjM3MTktNzkzOC00MTAzLTliYjctM2YwZjNlYTU4MTk2IiwiYXVkIjpbIkdCSGFja2F0b25DbGllbnRJRCIsInRpbWVzZXJpZXMuem9uZXMuNjYwNjM3MTktNzkzOC00MTAzLTliYjctM2YwZjNlYTU4MTk2IiwidGltZXNlcmllcy56b25lcy4yY2ZlZDVjYS00NWZkLTQ0M2UtYmFiZC03OGMxZDMxYTkxZDUiLCJ1YWEiLCJvcGVuaWQiXX0.cryTJ2iurEXChfXvyM4Vtg9EHNkXuHu0n4o5y-8x5_OcwL1prXmppPIPbaeNFdfnRbJUR0ms_ys5tClwDEQegHt7vTg7IxqS_hfrPTReY98YLTumoGFNqL_S0XrFWa6DTg2wN2jKRMSVGxJPFhU7_nREbBFkr1bjBsT9-ZjV-FVXZZmKr6Kvnc3kLLsXYCLRc993u6e_rtGydGwtWlLAmqP6JQrkaSSiBAC2TMeHOiud5DF0Ido-o6CL69DOzAO1v9GsaSoH3j10qUXLRJJ2Z5odA6s4UCPo58aT2AI3MoANLLNwmxXAQEbzxKVFOxI2CDXD1FvxCBhR3qTg7iRTYw";
+        var predixZoneId = "2cfed5ca-45fd-443e-babd-78c1d31a91d5";
+
+        var getToken = {
+            "async": false,
+            "crossDomain": true,
+            "url": tokenUrl,
+            "method": "POST",
+            data: 'grant_type=client_credentials&scope=',
+            crossDomain: true,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', authorizationBasic);
+            }
+        }
+
+        var getDataAjax = function (token,query) {
+            return {
+                "async": false,
+                "crossDomain": true,
+                "url": "https://time-series-store-predix.run.aws-usw02-pr.ice.predix.io/v1/datapoints",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                    "authorization": retrievedToken,
+                    "predix-zone-id": predixZoneId,
+                    "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": query
+            };
+        }
+
+        var getTagListAjax = function (token) {
+            return {
+                "async": false,
+                "crossDomain": true,
+                "url": "https://time-series-store-predix.run.aws-usw02-pr.ice.predix.io/v1/tags",
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                    "authorization": token,
+                    "predix-zone-id": predixZoneId,
+                    "cache-control": "no-cache"
+                },
+                "processData": false
+            };
+        }
+
+        var parseDataValues = function (response) {
+
+        $("#chartContainer").empty();
+
+            $.each(response.tags, function (index, value) {
+                var $container = $('<div id="div' + index + '" style="display: inline-block;border-style:solid;min-width: 700px;max-width: 900px; height: 300px; margin: 10px"></div>').appendTo($("#chartContainer"));
+
+                loadTrend(value.results[0].values, value.name, getUom(value.name), $container, Highcharts.getOptions().colors[index]);
+            });
+        }
+
+        var loadTrend = function (data, tagName,uom, container, lineColor) {
+            var options = {
+                chart: {
+                    renderTo: container[0],
+                    type: 'line',
+                    zoomType: 'x'
+                },
+                title:
+                {
+                     text: tagName,
+                     y:60,
+                     style: {
+                        color: lineColor,
+                        fontWeight: 'bold'
+                    }
+                },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        millisecond: '%H:%M:%S.%L',
+                        second: '%H:%M:%S',
+                        minute: '%H:%M',
+                        hour: '%H:%M',
+                        day: '%e. %b',
+                        week: '%e. %b',
+                        month: '%b \'%y',
+                        year: '%Y'
+                    },
+                    title: {
+                        text: 'Date',
+                        style: {
+                        color: lineColor,
+                        fontWeight: 'bold'
+                    }
+
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: uom,
+                        offset:20,
+                        rotation:0,
+                        style: {
+                        color: lineColor,
+                        fontWeight: 'bold'                        
+                    }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                rangeSelector: {
+                    inputEnabled: false,
+                    selected: 2,
+                    buttons: [{
+                        type: 'minute',
+                        count: 60,
+                        text: '1h'
+                    }, {
+                        type: 'day',
+                        count: 1,
+                        text: '1d'
+                    }, {
+                        type: 'week',
+                        count: 1,
+                        text: '1w'
+                    }, {
+                        type: 'month',
+                        count: 1,
+                        text: '1m'
+                    }, {
+                        type: 'all',
+                        text: 'All'
+                    }]
+                },
+                navigator: {
+                enabled: false
+                },
+                scrollbar : {
+                enabled : false
+            },
+                exporting: { enabled: false },
+                series: [{
+                    name: tagName,
+                    data: data,
+                    color: lineColor,
+                }]
+            };
+            // Create the chart
+            var chart = new Highcharts.StockChart(options);
+        };
+
+        var loadTags = function()
+        {
+            $.ajax(getTagListAjax(retrievedToken)).success(function (response) {                   
+                   $.each(response.results, function (i, item) {
+                   if(isTagAllowed(item))
+                   {
+                     $('#tagList').append($('<option>', { 
+                        value: item,
+                        text : item 
+                    }));
+                   }                  
+                });
+                }).error(function (response) {
+                    console.log("Error: " + response.responseText);
+                    alert("Error in calling Predix Rest Service: " + response.responseText);
+                });
+        };
+
+        $(document).ready(function () {
+            if (retrievedToken !== "") {
+                loadTags();
+            }
+            else {
+                $.ajax(getToken).success(function (response) {
+                    retrievedToken = response.access_token;
+                   loadTags();
+                }).error(function (response) {
+                    console.log("Error: " + response);
+                    alert("Error in calling Predix Rest Service");
+                });
+            }
+        });
+       
+
+       var isTagAllowed = function(tagName)
+       {          
+            switch (tagName.toUpperCase()) {
+                case "DHT_Temperature".toUpperCase():
+                    return true;
+                case "DHT_Humidity".toUpperCase():
+                    return true;
+                    break;
+                case "BMP_Pressure".toUpperCase():
+                    return true;
+                    break;
+                case "BMP_Temperature".toUpperCase():
+                    return true;
+                    break;
+                case "TLS_LUX".toUpperCase():
+                    return true;
+                    break;              
+            }
+       };
+
+       var getUom = function(tagName)
+       {          
+            switch (tagName.toUpperCase()) {
+                case "DHT_Temperature".toUpperCase():
+                    return "C°";
+                case "DHT_Humidity".toUpperCase():
+                    return "%";
+                    break;
+                case "BMP_Pressure".toUpperCase():
+                    return "hPa";
+                    break;
+                case "BMP_Temperature".toUpperCase():
+                    return "C°";
+                    break;
+                case "TLS_LUX".toUpperCase():
+                    return "lx";
+                    break;              
+            }
+       };
+
+        //]]>
+    </script>
+</head>
+<body style="background-color:#414141">
+    <div class="control-group">
+        <div class="controls">
+            <select id="tagList" class="form-control" style="margin: 10px">
+                <option value="All">All</option>
+            </select>
+            <input id="startTime" class="form-control" style="margin: 10px" type="datetime-local">
+            <input id="endTime" class="form-control" style="margin: 10px" type="datetime-local">            
+            <label class="radio inline" style="color:#d4d4d4">
+                <input id="rawValue" type="radio" value="0" checked="true" name="sampleCalculation" />
+                Raw
+            </label>
+            <label class="radio inline" style="color:#d4d4d4">
+                <input type="radio" value="1" name="sampleCalculation"/>
+                Interpolated
+            </label>
+
+            <button type="button" id="LoadTrend" class="btn btn-primary">
+                Load Data</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var ref = new Date();
+
+        var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+        var localEndtime = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -1);
+        var localStarttime = (new Date(Date.now() - tzoffset)).add(-1).day().toISOString().slice(0, -1);
+
+        document.getElementById('startTime').value = localStarttime;
+        document.getElementById('endTime').value = localEndtime;
+
+        $("#LoadTrend").click(function () {
+            var startTime = new Date(document.getElementById('startTime').value);
+            var endTime = new Date(document.getElementById('endTime').value);
+
+            var selectedItem = $("#tagList").val();
+            var isRaw = $('#rawValue').is(':checked'); 
+            var sampleLimit = 200;
+
+            var query = new Object();
+            query.start = startTime.getTime();
+            query.end = endTime.getTime();
+            query.tags = [];
+            if (selectedItem === "All") {
+                mapValue = $("select#tagList").children().not(":first").map(function () {
+                    return $(this).val();
+                }).get();
+
+                $.each(mapValue, function (index, item) {
+                    if (item !== "All") {
+                        var tagQuery = { "name": item, "limit": sampleLimit, "order": "asc" };
+                        if (!isRaw) {
+                            tagQuery.aggregations = [{ "type": "interpolate", "interval": "1mi"}];
+                        }
+                        query.tags.push(tagQuery);
+                    }
+                });
+            }
+            else {
+                var tagQuery = { "name": selectedItem, "limit": sampleLimit, "order": "asc" };
+                if (!isRaw) {
+                    tagQuery.aggregations = [{ "type": "interpolate", "interval": "1mi"}];
+                }
+                query.tags.push(tagQuery);
+            }
+
+            var string = JSON.stringify(query);
+
+            $.ajax(getDataAjax(retrievedToken, string)).success(function (response) {
+                parseDataValues(response);
+            }).error(function (response) {
+                console.log("Error: " + response.responseText);
+                alert("Error in calling Predix Rest Service: " + response.responseText);
+            });
+
+        });
+    </script>
+    <div id="chartContainer">
+    </div>
+</body>
+</html>
